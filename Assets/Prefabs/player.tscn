@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://0frg8r6omj2r"]
+
+[ext_resource type="Script" uid="uid://bbm217y677pmx" path="res://Assets/Prefabs/player_movement.gd" id="1_l4mef"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_poxnu"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l4mef"]
+height = 2.3554688
+
+[node name="Player" type="CharacterBody3D" unique_id=821089496]
+script = ExtResource("1_l4mef")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1795144840]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_poxnu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=996268797]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8222656, 0)
+shape = SubResource("CapsuleShape3D_l4mef")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1869054866]
+unique_name_in_owner = true
