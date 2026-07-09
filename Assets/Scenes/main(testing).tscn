@@ -6,9 +6,16 @@
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
 
-[sub_resource type="Environment" id="Environment_ssmyu"]
-
 [sub_resource type="BoxMesh" id="BoxMesh_a5065"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssmyu"]
+
+[sub_resource type="Sky" id="Sky_a5065"]
+sky_material = SubResource("ProceduralSkyMaterial_ssmyu")
+
+[sub_resource type="Environment" id="Environment_rg1sq"]
+background_mode = 2
+sky = SubResource("Sky_a5065")
 
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
 
@@ -24,13 +31,13 @@ shape = SubResource("WorldBoundaryShape3D_aillh")
 transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
 mesh = SubResource("PlaneMesh_ssmyu")
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1291606099]
-environment = SubResource("Environment_ssmyu")
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1985279397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
 shadow_enabled = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946014716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -14.681368)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -14.681)
 mesh = SubResource("BoxMesh_a5065")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
+environment = SubResource("Environment_rg1sq")
