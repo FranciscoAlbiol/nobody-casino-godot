@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://ddyhxnbw3w0wu"]
 
 [ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
+[ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_a5065"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg1sq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssmyu"]
 
@@ -34,10 +37,21 @@ mesh = SubResource("PlaneMesh_ssmyu")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1985279397]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
 shadow_enabled = true
+sky_mode = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946014716]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -14.681)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946014716 node_paths=PackedStringArray("interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
 mesh = SubResource("BoxMesh_a5065")
+script = ExtResource("2_a5065")
+interactable_camera = NodePath("interaction_test_camera")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1073172779]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1683407702]
+shape = SubResource("BoxShape3D_rg1sq")
+
+[node name="interaction_test_camera" type="Camera3D" parent="MeshInstance3D" unique_id=1438568812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.625783)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://0frg8r6omj2r"]
 
-[ext_resource type="Script" uid="uid://bbm217y677pmx" path="res://Assets/Prefabs/player_movement.gd" id="1_l4mef"]
+[ext_resource type="Script" uid="uid://bbm217y677pmx" path="res://Assets/Scripts/player_movement.gd" id="1_l4mef"]
+[ext_resource type="Script" uid="uid://b1qtftt344y2k" path="res://Assets/Scripts/Player_Interaction.gd" id="2_tgki7"]
+[ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="3_ebihn"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_poxnu"]
 
@@ -9,6 +11,15 @@ height = 2.3554688
 
 [node name="Player" type="CharacterBody3D" unique_id=821089496]
 script = ExtResource("1_l4mef")
+
+[node name="Player Interaction" type="Node3D" parent="." unique_id=2075380535 node_paths=PackedStringArray("player_camera", "interaction_raycast", "movement_script", "fade_rect", "interact_notif", "talk_notif")]
+script = ExtResource("2_tgki7")
+player_camera = NodePath("../Camera3D")
+interaction_raycast = NodePath("../Camera3D/RayCast3D")
+movement_script = NodePath("..")
+fade_rect = NodePath("../Player UI/BlackFade")
+interact_notif = NodePath("../Player UI/InteracionIcon")
+talk_notif = NodePath("../Player UI/InteracionIcon")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1795144840]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -20,3 +31,35 @@ shape = SubResource("CapsuleShape3D_l4mef")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1869054866]
 unique_name_in_owner = true
+
+[node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1720866225]
+
+[node name="Player UI" type="Control" parent="." unique_id=1094032563]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BlackFade" type="ColorRect" parent="Player UI" unique_id=800205395]
+light_mask = 0
+visibility_layer = 512
+z_index = -1
+layout_mode = 0
+offset_right = 1158.0
+offset_bottom = 654.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0)
+
+[node name="InteracionIcon" type="TextureRect" parent="Player UI" unique_id=1807014676]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ebihn")
+
+[node name="TalkIcon" type="TextureRect" parent="Player UI" unique_id=1716443330]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_ebihn")
