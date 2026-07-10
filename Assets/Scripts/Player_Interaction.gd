@@ -1,4 +1,5 @@
 extends Node3D
+class_name Player_Interaction
 
 @export var interact_range: float = 5.0
 @export var player_camera: Camera3D
@@ -19,6 +20,7 @@ var is_transitioning: bool = false
 var input_cooldown: bool = false
 
 func _ready() -> void:
+	GameManager.player_interaction = self
 	# Configure the raycast programmatically based on range
 	if interaction_raycast:
 		interaction_raycast.target_position = Vector3(0, 0, -interact_range)
@@ -105,8 +107,8 @@ func transition_camera(from_cam: Camera3D, to_cam: Camera3D, entering_interactio
 			movement_script.set_input_enabled(false)
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-		if current_active and current_active.trigger:
-			current_active.trigger.start_dialogue()
+		if current_active and not current_active.dialogue_json.is_empty():
+			DialogueLayout.get_json(current_active.dialogue_json)
 		elif current_active and not current_active.minigame_to_start.is_empty():
 			start_minigame(current_active.minigame_to_start)
 	else:

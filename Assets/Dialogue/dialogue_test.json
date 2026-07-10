@@ -1,0 +1,12 @@
+{
+	"start": {
+		"name": "Box",
+		"text": "Hello there",
+		"expression": "neutral",
+		"next": "1"
+	},
+	
+	"1": {
+		"text": "I am reading text from a json",
+	}
+}

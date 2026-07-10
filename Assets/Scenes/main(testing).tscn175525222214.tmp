@@ -2,7 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://dyq223dlaw8ks" path="res://Assets/Prefabs/dialogue_layout.tscn" id="1_rg1sq"]
 [ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
-[ext_resource type="Script" uid="uid://pv60l6r31blb" path="res://Assets/Scripts/game_manager.gd" id="1_ypjvi"]
 [ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
@@ -23,9 +22,6 @@ background_mode = 2
 sky = SubResource("Sky_a5065")
 
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
-
-[node name="GameManager" type="Node" parent="." unique_id=2100894281]
-script = ExtResource("1_ypjvi")
 
 [node name="Dialogue Layout" parent="." unique_id=1785937985 instance=ExtResource("1_rg1sq")]
 
