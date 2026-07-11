@@ -63,8 +63,8 @@ func _process(_delta: float) -> void:
 		talk_notif.visible = false
 
 	if current_hovered:
-		#var is_game: bool = not current_hovered.minigame_to_start.is_empty()
-		var is_game = true; #this is just for debugging reaons
+		var is_game: bool = not current_hovered.minigame_to_start.is_empty()
+		#var is_game = true; #this is just for debugging reaons
 		
 		# interact_game: E // interact_talk: Space
 		var pressed: bool = Input.is_action_just_pressed("interact_game") if is_game else Input.is_action_just_pressed("interact_talk")

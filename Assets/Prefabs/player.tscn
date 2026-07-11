@@ -2,13 +2,24 @@
 
 [ext_resource type="Script" uid="uid://bbm217y677pmx" path="res://Assets/Scripts/player_movement.gd" id="1_l4mef"]
 [ext_resource type="Script" uid="uid://b1qtftt344y2k" path="res://Assets/Scripts/Player_Interaction.gd" id="2_tgki7"]
-[ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="3_ebihn"]
 [ext_resource type="PackedScene" uid="uid://c7q5tanwr7u6t" path="res://Assets/Prefabs/general_ui.tscn" id="3_x4ukv"]
+[ext_resource type="Texture2D" uid="uid://nky5n4gq2oh3" path="res://Assets/Sprites/UI/UI.png" id="4_m0ojv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_poxnu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_l4mef"]
 height = 2.3554688
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kvxw"]
+atlas = ExtResource("4_m0ojv")
+region = Rect2(30, 680, 270, 120)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_x4ukv"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0ojv"]
+atlas = SubResource("CompressedTexture2D_x4ukv")
+region = Rect2(30.495, 795, 124.815, 120)
 
 [node name="Player" type="CharacterBody3D" unique_id=821089496]
 script = ExtResource("1_l4mef")
@@ -35,14 +46,12 @@ unique_name_in_owner = true
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1720866225]
 
-[node name="General UI" parent="." unique_id=161449107 instance=ExtResource("3_x4ukv")]
-mouse_filter = 2
-
 [node name="Player UI" type="Control" parent="." unique_id=1094032563]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 1150.0
+offset_bottom = 650.0
+mouse_filter = 2
 
 [node name="BlackFade" type="ColorRect" parent="Player UI" unique_id=800205395]
 light_mask = 0
@@ -56,14 +65,77 @@ color = Color(0, 0, 0, 0)
 
 [node name="InteracionIcon" type="TextureRect" parent="Player UI" unique_id=1807014676]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_ebihn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_1kvxw")
+
+[node name="Label" type="Label" parent="Player UI/InteracionIcon" unique_id=773715794]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.0
+offset_top = -40.0
+offset_right = 76.0
+offset_bottom = 29.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 50
+text = "SPACE"
 
 [node name="TalkIcon" type="TextureRect" parent="Player UI" unique_id=1716443330]
 visible = false
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("3_ebihn")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -67.0
+offset_right = 64.0
+offset_bottom = 61.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(0.5, 0.5)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_m0ojv")
+expand_mode = 4
+
+[node name="Label" type="Label" parent="Player UI/TalkIcon" unique_id=1786134481]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 50
+text = "E"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="General UI" parent="." unique_id=161449107 instance=ExtResource("3_x4ukv")]
+mouse_filter = 2

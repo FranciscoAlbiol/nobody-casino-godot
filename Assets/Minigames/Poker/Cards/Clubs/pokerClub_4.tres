@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="PokerCard" format=3 uid="uid://d0nwhtf6gwtxo"]
+
+[ext_resource type="Script" uid="uid://cqhl68g8oikew" path="res://Assets/Minigames/Poker/PokerCard.gd" id="1_y3psd"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jisha"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3psd"]
+atlas = SubResource("CompressedTexture2D_jisha")
+region = Rect2(594, 1192, 198, 298)
+
+[resource]
+script = ExtResource("1_y3psd")
+number = 4
+card_sprite = SubResource("AtlasTexture_y3psd")

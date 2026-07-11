@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dq8n2bhm0nws7"]
+
+[ext_resource type="Script" uid="uid://dlgncinqde7mp" path="res://Assets/Minigames/Poker/poker_manager.gd" id="1_k2m0y"]
+[ext_resource type="Texture2D" uid="uid://y7wxnngdwj2n" path="res://Assets/Minigames/Poker/poker_card_spritesheet.png" id="1_q1r40"]
+[ext_resource type="Script" uid="uid://cqhl68g8oikew" path="res://Assets/Minigames/Poker/PokerCard.gd" id="2_21fr2"]
+[ext_resource type="Resource" uid="uid://cf825cjhdw365" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_1.tres" id="3_w2pib"]
+[ext_resource type="Resource" uid="uid://cgsuh1llxtttv" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_2.tres" id="4_glel0"]
+[ext_resource type="Resource" uid="uid://clsh2u7idxccb" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_3.tres" id="5_bhiai"]
+[ext_resource type="Resource" uid="uid://d0nwhtf6gwtxo" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_4.tres" id="6_4urwr"]
+[ext_resource type="Resource" uid="uid://b57r75vqe7r4v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_5.tres" id="7_evbgm"]
+[ext_resource type="Resource" uid="uid://dee0yltl23lvg" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_6.tres" id="8_iary6"]
+[ext_resource type="Resource" uid="uid://dqejcr2oth0ko" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_7.tres" id="9_mhmyh"]
+[ext_resource type="Resource" uid="uid://kb15yx8h6u50" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_8.tres" id="10_lwmbb"]
+[ext_resource type="Resource" uid="uid://bnfhu0npqeqyu" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_9.tres" id="11_s3uwp"]
+[ext_resource type="Resource" uid="uid://bu2tlo650mxff" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_10.tres" id="12_ge2hy"]
+[ext_resource type="Resource" uid="uid://bkqdu16qeq375" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_J.tres" id="13_ld27i"]
+[ext_resource type="Resource" uid="uid://c3idcske05m2v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_K.tres" id="14_m2qxr"]
+[ext_resource type="Resource" uid="uid://bguywgmm8kta7" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_Q.tres" id="15_55vvi"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_6hyqc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21fr2"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2pib"]
+atlas = SubResource("CompressedTexture2D_21fr2")
+region = Rect2(0, 0, 198, 298)
+
+[node name="PokerMinigame" type="Node3D" unique_id=514339496 node_paths=PackedStringArray("p_card1", "p_card2")]
+script = ExtResource("1_k2m0y")
+deck = Array[ExtResource("2_21fr2")]([ExtResource("3_w2pib"), ExtResource("4_glel0"), ExtResource("5_bhiai"), ExtResource("6_4urwr"), ExtResource("7_evbgm"), ExtResource("8_iary6"), ExtResource("9_mhmyh"), ExtResource("10_lwmbb"), ExtResource("11_s3uwp"), ExtResource("12_ge2hy"), ExtResource("13_ld27i"), ExtResource("14_m2qxr"), ExtResource("15_55vvi")])
+p_card1 = NodePath("Player Cards/PlayerCard1")
+p_card2 = NodePath("Player Cards/PlayerCard2")
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=233495553]
+transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, 0, 0)
+mesh = SubResource("BoxMesh_6hyqc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1377900123]
+transform = Transform3D(1, 0, 0, 0, 0.9421394, 0.33522135, 0, -0.33522135, 0.9421394, 0, 1.0935581, 1.4783744)
+
+[node name="NPC2 Cards" type="Node3D" parent="." unique_id=898684447]
+transform = Transform3D(0.10641897, 0.3241321, -0.9400072, -0.036462333, 0.94601184, 0.32207468, 0.9936527, 0, 0.11249222, -1.5, 0.68230116, 0)
+
+[node name="npcCard1" type="Sprite3D" parent="NPC2 Cards" unique_id=774186305]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833836e-09, -9.313226e-10, -1.8626451e-09, 0.1, 0.030581728, 0, 0.0034621954)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="npcCard2" type="Sprite3D" parent="NPC2 Cards" unique_id=2021267031]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0.014)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="NPC1 Cards" type="Node3D" parent="." unique_id=698696511]
+transform = Transform3D(0.10504797, -0.35773236, -0.927897, 0.040242113, 0.9338242, -0.35546178, 0.9936528, 0, 0.11249223, 1.5, 0.68230116, 0)
+
+[node name="npcCard1" type="Sprite3D" parent="NPC1 Cards" unique_id=62754370]
+transform = Transform3D(0.099999994, -2.0820307e-10, -9.313226e-10, 6.9849193e-10, 0.1, -7.450581e-09, -9.313226e-10, -2.3570838e-11, 0.10000001, -0.008966401, 0, -0.0010150671)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="npcCard2" type="Sprite3D" parent="NPC1 Cards" unique_id=420191663]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0.014)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="Player Cards" type="Node3D" parent="." unique_id=1764694204]
+transform = Transform3D(1.0000002, 0, 0, 0, 0.9238795, 0.38268352, 0, -0.38268346, 0.9238796, 0.12277174, 0.687, 1.117)
+
+[node name="PlayerCard2" type="Sprite3D" parent="Player Cards" unique_id=1569663461]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0)
+texture = SubResource("AtlasTexture_w2pib")
+
+[node name="PlayerCard1" type="Sprite3D" parent="Player Cards" unique_id=663582324]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.09999999, 0, 0, 0, 0.09999999, -0.008138463, 0, 0)
+texture = SubResource("AtlasTexture_w2pib")
