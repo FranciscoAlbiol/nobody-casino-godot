@@ -6,7 +6,9 @@ class_name Dialogue_Manager
 @onready var name_tag: Label = $NameTag
 @onready var next_button: Button = $NextButton
 
-	
+var typing_tween: Tween = null
+@export var text_speed: float = 0.03
+
 @export_file("*.json") var json_src
 var current_dialogue : Dictionary
 var current_block : Dictionary
@@ -30,14 +32,35 @@ func get_json(source: String):
 	start_dialogue()
 
 func load_block(block : Dictionary):
-	if (block.has("text")):
+	if block.has("text"):
+		if typing_tween and typing_tween.is_running():
+			typing_tween.kill()
+		
 		text_label.text = block["text"]
 		print(block["text"])
+		
+		text_label.visible_characters = 0
+		
+		var total_characters = block["text"].length()
+		var duration = total_characters * text_speed
+		
+		typing_tween = create_tween()
+		typing_tween.tween_property(
+			text_label, 
+			"visible_characters", 
+			total_characters, 
+			duration
+		)
 	
 	if(block.has("name")):
 		name_tag.text = block["name"]
 
 func get_next_line():
+	if typing_tween and typing_tween.is_running():
+		typing_tween.kill()
+		text_label.visible_characters = -1 # -1: show all characters
+		return
+		
 	if(current_block.has("next")):
 		current_block = current_dialogue[current_block["next"]]
 		load_block(current_block)
