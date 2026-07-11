@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bbm217y677pmx" path="res://Assets/Scripts/player_movement.gd" id="1_l4mef"]
 [ext_resource type="Script" uid="uid://b1qtftt344y2k" path="res://Assets/Scripts/Player_Interaction.gd" id="2_tgki7"]
 [ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="3_ebihn"]
+[ext_resource type="PackedScene" uid="uid://c7q5tanwr7u6t" path="res://Assets/Prefabs/general_ui.tscn" id="3_x4ukv"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_poxnu"]
 
@@ -33,6 +34,9 @@ shape = SubResource("CapsuleShape3D_l4mef")
 unique_name_in_owner = true
 
 [node name="RayCast3D" type="RayCast3D" parent="Camera3D" unique_id=1720866225]
+
+[node name="General UI" parent="." unique_id=161449107 instance=ExtResource("3_x4ukv")]
+mouse_filter = 2
 
 [node name="Player UI" type="Control" parent="." unique_id=1094032563]
 layout_mode = 3
