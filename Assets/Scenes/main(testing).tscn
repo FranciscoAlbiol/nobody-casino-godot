@@ -4,14 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
 [ext_resource type="Script" uid="uid://pv60l6r31blb" path="res://Assets/Scripts/game_manager.gd" id="1_ypjvi"]
 [ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
+[ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="5_t8s3k"]
+[ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_a5065"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_rg1sq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y4xre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4xre"]
+render_priority = 0
+shader = ExtResource("5_y4xre")
+shader_parameter/albedo_texture = ExtResource("5_t8s3k")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_y4xre")
+shader_parameter/use_billboard = true
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.7
+shader_parameter/fps = 4.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssmyu"]
 
@@ -48,18 +60,24 @@ sky_mode = 1
 
 [node name="cube_test" type="MeshInstance3D" parent="." unique_id=1946014716 node_paths=PackedStringArray("interactable_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
-mesh = SubResource("BoxMesh_a5065")
 script = ExtResource("2_a5065")
-interactable_camera = NodePath("interaction_test_camera")
+interactable_camera = NodePath("NPC_Example/interaction_test_camera")
 dialogue_json = "res://Assets/Dialogue/dialogue_test.json"
 
 [node name="StaticBody3D" type="StaticBody3D" parent="cube_test" unique_id=1073172779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5571079)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="cube_test/StaticBody3D" unique_id=1683407702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53527117)
 shape = SubResource("BoxShape3D_rg1sq")
 
-[node name="interaction_test_camera" type="Camera3D" parent="cube_test" unique_id=1438568812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.625783)
+[node name="NPC_Example" type="Sprite3D" parent="cube_test" unique_id=1511726362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99175835)
+material_override = SubResource("ShaderMaterial_y4xre")
+texture = ExtResource("5_t8s3k")
+
+[node name="interaction_test_camera" type="Camera3D" parent="cube_test/NPC_Example" unique_id=1438568812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")
