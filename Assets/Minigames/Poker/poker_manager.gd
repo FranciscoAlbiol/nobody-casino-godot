@@ -46,6 +46,15 @@ func _ready() -> void:
 	print(npc1_hand)
 
 func start_poker():
+	#set things up
+	current_min_bet = 5
+	player_bet = 5
+	npc1_bet = 5
+	npc2_bet = 5
+	global_bet = 15
+	
+	#GameManager.instance.current_money -= 5
+	
 	shuffle_deck()
 
 
