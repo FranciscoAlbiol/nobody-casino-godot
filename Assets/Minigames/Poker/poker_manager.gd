@@ -51,7 +51,8 @@ var player_bet: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#MinigameManager.register_minigame("poker", self)
+	MinigameManager.register_minigame("poker", self)
+	
 	raise_button.pressed.connect(action_player_raise)
 	fold_button.pressed.connect(action_player_fold)
 	check_button.pressed.connect(action_player_check)

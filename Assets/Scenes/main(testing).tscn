@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
 [ext_resource type="Script" uid="uid://pv60l6r31blb" path="res://Assets/Scripts/game_manager.gd" id="1_ypjvi"]
 [ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
+[ext_resource type="Script" uid="uid://cpuoewxw8yd80" path="res://Assets/Scripts/MinigameManager.gd" id="2_ofgdj"]
 [ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="5_t8s3k"]
 [ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
 [ext_resource type="PackedScene" uid="uid://dq8n2bhm0nws7" path="res://Assets/Minigames/Poker/poker_minigame.tscn" id="7_ox5ug"]
@@ -42,6 +43,9 @@ size = Vector3(3.3808594, 1, 2.05542)
 
 [node name="GameManager" type="Node" parent="." unique_id=2100894281]
 script = ExtResource("1_ypjvi")
+
+[node name="MinigameManager" type="Node" parent="GameManager" unique_id=479107949]
+script = ExtResource("2_ofgdj")
 
 [node name="Dialogue Layout" parent="." unique_id=1785937985 instance=ExtResource("1_rg1sq")]
 

@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 DialogueLayout="*uid://dyq223dlaw8ks"
 GameManager="*uid://pv60l6r31blb"
+MinigameManager="*uid://cpuoewxw8yd80"
 
 [input]
 

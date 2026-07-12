@@ -131,4 +131,4 @@ func end_dialogue():
 
 	
 func start_minigame(minigame : String):
-	pass
+	MinigameManager.start_game(current_active.minigame_to_start)
