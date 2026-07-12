@@ -57,6 +57,7 @@ func _process(_delta: float) -> void:
 			var is_game: bool = not current_hovered.minigame_to_start.is_empty()
 			interact_notif.visible = is_game
 			talk_notif.visible = not is_game
+			print(is_game)
 
 	if not interaction_raycast.is_colliding():
 		interact_notif.visible = false
@@ -107,7 +108,7 @@ func transition_camera(from_cam: Camera3D, to_cam: Camera3D, entering_interactio
 			movement_script.set_input_enabled(false)
 		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		
-		if current_active and not current_active.dialogue_json.is_empty():
+		if current_active and current_active.dialogue_json:
 			DialogueLayout.get_json(current_active.dialogue_json)
 		elif current_active and not current_active.minigame_to_start.is_empty():
 			start_minigame(current_active.minigame_to_start)

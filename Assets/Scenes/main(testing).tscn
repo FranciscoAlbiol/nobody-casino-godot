@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
 [ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="5_t8s3k"]
 [ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
+[ext_resource type="PackedScene" uid="uid://dq8n2bhm0nws7" path="res://Assets/Minigames/Poker/poker_minigame.tscn" id="7_ox5ug"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
@@ -33,6 +34,9 @@ sky_material = SubResource("ProceduralSkyMaterial_ssmyu")
 [sub_resource type="Environment" id="Environment_rg1sq"]
 background_mode = 2
 sky = SubResource("Sky_a5065")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
+size = Vector3(3.3808594, 1, 2.05542)
 
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
 
@@ -81,3 +85,23 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")
+
+[node name="PokerGameinteractable" type="Node3D" parent="." unique_id=412245585 node_paths=PackedStringArray("interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.862253, 0, 0)
+script = ExtResource("2_a5065")
+minigame_to_start = "poker"
+interactable_camera = NodePath("PokerMinigame/Camera3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PokerGameinteractable" unique_id=369824732]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerGameinteractable/StaticBody3D" unique_id=2138494489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_ox5ug")
+
+[node name="PokerMinigame" parent="PokerGameinteractable" unique_id=514339496 instance=ExtResource("7_ox5ug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54025936, 0, 0)
+
+[node name="PokerUI" parent="PokerGameinteractable/PokerMinigame" index="6" unique_id=1684553306]
+mouse_filter = 2
+
+[editable path="PokerGameinteractable/PokerMinigame"]

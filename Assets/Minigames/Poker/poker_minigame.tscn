@@ -16,6 +16,7 @@
 [ext_resource type="Resource" uid="uid://bkqdu16qeq375" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_J.tres" id="13_ld27i"]
 [ext_resource type="Resource" uid="uid://c3idcske05m2v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_K.tres" id="14_m2qxr"]
 [ext_resource type="Resource" uid="uid://bguywgmm8kta7" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_Q.tres" id="15_55vvi"]
+[ext_resource type="Texture2D" uid="uid://nky5n4gq2oh3" path="res://Assets/Sprites/UI/UI.png" id="17_w2pib"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_6hyqc"]
 
@@ -53,6 +54,31 @@ load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
 [sub_resource type="AtlasTexture" id="AtlasTexture_4urwr"]
 atlas = SubResource("CompressedTexture2D_bhiai")
 region = Rect2(1152, 1392, 432, 488)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evbgm"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iary6"]
+atlas = SubResource("CompressedTexture2D_evbgm")
+region = Rect2(2064, 456, 584, 320)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mhmyh"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwmbb"]
+atlas = SubResource("CompressedTexture2D_mhmyh")
+region = Rect2(2064, 1064, 592, 456)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s3uwp"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge2hy"]
+atlas = SubResource("CompressedTexture2D_s3uwp")
+region = Rect2(1528, 920, 432, 392)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld27i"]
+atlas = ExtResource("17_w2pib")
+region = Rect2(1536, 496, 424, 424)
 
 [node name="PokerMinigame" type="Node3D" unique_id=514339496 node_paths=PackedStringArray("p_card1", "p_card2", "npc1_cards", "npc2_cards", "t_cards")]
 script = ExtResource("1_k2m0y")
@@ -149,50 +175,121 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.9, 0.9)
 
-[node name="FoldButton" type="TextureButton" parent="PokerUI" unique_id=591380067]
+[node name="ActionButtons" type="Control" parent="PokerUI" unique_id=836351287]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoldButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=591380067]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -219.0
-offset_top = -108.0
-offset_right = 357.0
-offset_bottom = 148.0
+offset_left = 891.00006
+offset_top = 502.0
+offset_right = 1467.0
+offset_bottom = 758.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_bhiai")
 
-[node name="RaiseButton" type="TextureButton" parent="PokerUI" unique_id=2030948690]
+[node name="RaiseButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=2030948690]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -243.0
-offset_top = -229.0
-offset_right = 357.0
-offset_bottom = 51.0
+offset_left = 867.0
+offset_top = 381.0
+offset_right = 1467.0
+offset_bottom = 661.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_evbgm")
 
-[node name="CheckButton" type="TextureButton" parent="PokerUI" unique_id=2128177677]
+[node name="CheckButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=2128177677]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -396.0
-offset_top = -205.0
-offset_right = 36.0
-offset_bottom = 283.0
+offset_left = 714.0
+offset_top = 405.0
+offset_right = 1146.0
+offset_bottom = 893.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.4, 0.4)
 texture_normal = SubResource("AtlasTexture_4urwr")
+
+[node name="RaiseMenu" type="Control" parent="PokerUI" unique_id=1653083041]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=2130291006]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 880.00006
+offset_top = 478.88892
+offset_right = 1464.0
+offset_bottom = 798.8889
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_iary6")
+
+[node name="BetButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=674030460]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 867.7778
+offset_top = 312.22223
+offset_right = 1467.7778
+offset_bottom = 768.2222
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_lwmbb")
+
+[node name="PiggyButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=276930233]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.44446
+offset_top = 391.11115
+offset_right = 1096.4446
+offset_bottom = 791.1112
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_ge2hy")
+texture_pressed = SubResource("AtlasTexture_ld27i")
+
+[node name="CurrentBetText" type="Label" parent="PokerUI/RaiseMenu" unique_id=1257995278]
+layout_mode = 0
+offset_left = 793.3334
+offset_top = 391.1111
+offset_right = 835.3334
+offset_bottom = 433.1111
+theme_override_font_sizes/font_size = 30
+text = "$ 5"
+horizontal_alignment = 1
