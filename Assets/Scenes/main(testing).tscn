@@ -9,6 +9,9 @@
 [ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
 [ext_resource type="PackedScene" uid="uid://dq8n2bhm0nws7" path="res://Assets/Minigames/Poker/poker_minigame.tscn" id="7_ox5ug"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
+size = Vector3(3.3808594, 1, 2.05542)
+
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
@@ -36,10 +39,23 @@ sky_material = SubResource("ProceduralSkyMaterial_ssmyu")
 background_mode = 2
 sky = SubResource("Sky_a5065")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
-size = Vector3(3.3808594, 1, 2.05542)
-
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
+
+[node name="PokerInteractable2" type="Node3D" parent="." unique_id=2066997590 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1538792, 0.25500003, 5.495723)
+script = ExtResource("2_a5065")
+minigame_to_start = "poker"
+minigame_node = NodePath("PokerMinigame")
+interactable_camera = NodePath("PokerMinigame/Camera3D")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PokerInteractable2" unique_id=1846439848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerInteractable2/StaticBody3D2" unique_id=609687611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_ox5ug")
+
+[node name="PokerMinigame" parent="PokerInteractable2" unique_id=514339496 instance=ExtResource("7_ox5ug")]
 
 [node name="GameManager" type="Node" parent="." unique_id=2100894281]
 script = ExtResource("1_ypjvi")
@@ -90,10 +106,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")
 
-[node name="PokerGameinteractable" type="Node3D" parent="." unique_id=412245585 node_paths=PackedStringArray("interactable_camera")]
+[node name="PokerGameinteractable" type="Node3D" parent="." unique_id=412245585 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.862253, 0, 0)
 script = ExtResource("2_a5065")
 minigame_to_start = "poker"
+minigame_node = NodePath("PokerMinigame")
 interactable_camera = NodePath("PokerMinigame/Camera3D")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="PokerGameinteractable" unique_id=369824732]
@@ -102,10 +119,8 @@ interactable_camera = NodePath("PokerMinigame/Camera3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
 shape = SubResource("BoxShape3D_ox5ug")
 
-[node name="PokerMinigame" parent="PokerGameinteractable" unique_id=514339496 instance=ExtResource("7_ox5ug")]
+[node name="PokerMinigame" parent="PokerGameinteractable" unique_id=1016006478 instance=ExtResource("7_ox5ug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54025936, 0, 0)
 
-[node name="PokerUI" parent="PokerGameinteractable/PokerMinigame" index="6" unique_id=1684553306]
-mouse_filter = 2
-
+[editable path="PokerInteractable2/PokerMinigame"]
 [editable path="PokerGameinteractable/PokerMinigame"]

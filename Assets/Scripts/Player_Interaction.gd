@@ -131,4 +131,7 @@ func end_dialogue():
 
 	
 func start_minigame(minigame : String):
-	MinigameManager.start_game(current_active.minigame_to_start)
+	if current_active.minigame_node:
+		MinigameManager.start_game_instance(current_active.minigame_node)
+	else:
+		print("No minigame_node assigned to this Interactable object!")

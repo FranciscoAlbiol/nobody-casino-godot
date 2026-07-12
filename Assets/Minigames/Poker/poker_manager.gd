@@ -11,6 +11,7 @@ class_name PokerManager
 @export var npc2_cards: Node3D
 
 @export var t_cards: Array[Node3D] = []
+@export var back_card_texture: Texture
 
 #UI
 @onready var poker_ui: Control = $PokerUI
@@ -34,6 +35,7 @@ var player_hand: Array[PokerCard] = [null, null]
 var table_cards: Array[PokerCard] = [null, null, null, null, null]
 
 var waiting_player: bool = false
+var is_game_active: bool = true
 var turn_index: int = 0
 var current_bet: int = 0
 var raise_bet: int = 5
@@ -71,20 +73,21 @@ func start_minigame():
 	npc2_bet = 5
 	global_bet = 15
 	
+	for i in range(t_cards.size()):
+		t_cards[i].texture = back_card_texture
+	
 	action_buttons.visible = false
 	
-	#!!! UNCOMMENT THIS WHEN IN MAIN SCENE
-	#GameManager.instance.current_money -= 5 
+	GameManager.current_money -= 5 
+	p_card1.visible = true
+	p_card2.visible = true
+	is_game_active = true
+
 	
 	shuffle_deck()
 	create_round()
 	poker_flow_manager()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-	
 func shuffle_deck():
 	deck.shuffle()
 
@@ -110,6 +113,7 @@ func poker_flow_manager() -> void:
 		npc1_cards.visible = false
 
 	await player_turn()
+	if not is_game_active: return
 	
 	await npc_turn1(2)
 	if npc2_folded: 
@@ -127,6 +131,7 @@ func poker_flow_manager() -> void:
 		if npc1_folded: npc1_cards.visible = false
 
 	await player_turn()
+	if not is_game_active: return
 
 	if not npc2_folded:
 		await npc_turn2(2, 3)
@@ -144,6 +149,7 @@ func poker_flow_manager() -> void:
 		if npc1_folded: npc1_cards.visible = false
 
 	await player_turn()
+	if not is_game_active: return
 
 	if not npc2_folded:
 		await npc_turn2(2, 5)
@@ -161,6 +167,7 @@ func poker_flow_manager() -> void:
 		if npc2_folded: npc2_cards.visible = false
 
 	await player_turn()
+	if not is_game_active: return
 
 	if not npc2_folded: 
 		await npc_turn2(2, 5)
@@ -176,7 +183,7 @@ func poker_flow_manager() -> void:
 	if (npc1_folded or points_player >= points_npc1) and (npc2_folded or points_player >= points_npc2):
 		print("Player wins!")
 		# $WinGameAudio.play() 
-		# GameManager.instance.current_money += global_bet
+		GameManager.current_money += global_bet
 	else:
 		print("Player loses.")
 		# $LoseGameAudio.play()
@@ -188,7 +195,7 @@ func poker_flow_manager() -> void:
 func check_early_win() -> bool:
 	if npc1_folded and npc2_folded:
 		print("Player wins because everyone folded!")
-		# GameManager.instance.current_money += global_bet
+		GameManager.current_money += global_bet
 		action_player_fold()
 		return true
 	return false
@@ -266,6 +273,11 @@ func show_table_cards(start_pos: int, end_pos: int):
 		
 
 func action_player_fold():
+	MinigameManager.unregister_minigame("poker")
+
+	is_game_active = false
+	p_card1.visible = false
+	p_card2.visible = false
 	action_buttons.visible = false;
 	
 	if GameManager.player_interaction:
@@ -278,9 +290,9 @@ func action_player_raise():
 	action_buttons.visible = false
 
 func action_raise_bet():
-	#if (GameManager.current_money >= 5):
+	if (GameManager.current_money >= 5):
 		raise_bet += 5
-		#GameManager.current_money -= 5
+		GameManager.current_money -= 5
 		current_bet_text.text = "$ " + str(raise_bet)
 
 func action_leave_bet():
@@ -300,10 +312,10 @@ func action_player_check():
 	var callAmount = current_min_bet - player_bet
 	
 	if (callAmount > 0):
-		if (GameManager.Instance.current_money >= callAmount):
+		if (GameManager.current_money >= callAmount):
 			player_bet += callAmount;
 			global_bet += callAmount;
-			GameManager.Instance.current_money -= callAmount;
+			GameManager.current_money -= callAmount;
 	
 		else:
 			action_player_fold()

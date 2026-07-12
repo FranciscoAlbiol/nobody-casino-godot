@@ -18,6 +18,13 @@
 [ext_resource type="Resource" uid="uid://bguywgmm8kta7" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_Q.tres" id="15_55vvi"]
 [ext_resource type="Texture2D" uid="uid://nky5n4gq2oh3" path="res://Assets/Sprites/UI/UI.png" id="17_w2pib"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iary6"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmyh"]
+atlas = SubResource("CompressedTexture2D_iary6")
+region = Rect2(0, 0, 198, 298)
+
 [sub_resource type="BoxMesh" id="BoxMesh_6hyqc"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w2pib"]
@@ -88,6 +95,7 @@ p_card2 = NodePath("Player Cards/PlayerCard2")
 npc1_cards = NodePath("NPC1 Cards")
 npc2_cards = NodePath("NPC2 Cards")
 t_cards = [NodePath("Table Cards/tableCard1"), NodePath("Table Cards/tableCard2"), NodePath("Table Cards/tableCard3"), NodePath("Table Cards/tableCard4"), NodePath("Table Cards/tableCard5")]
+back_card_texture = SubResource("AtlasTexture_mhmyh")
 
 [node name="Table" type="MeshInstance3D" parent="." unique_id=233495553]
 transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, 0, 0)
@@ -154,10 +162,12 @@ transform = Transform3D(1.0000002, 0, 0, 0, 0.9238795, 0.38268352, 0, -0.3826834
 
 [node name="PlayerCard2" type="Sprite3D" parent="Player Cards" unique_id=1569663461]
 transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0)
+visible = false
 texture = SubResource("AtlasTexture_w2pib")
 
 [node name="PlayerCard1" type="Sprite3D" parent="Player Cards" unique_id=663582324]
 transform = Transform3D(0.09999999, 0, 0, 0, 0.09999999, 0, 0, 0, 0.09999999, -0.008138463, 0, 0)
+visible = false
 texture = SubResource("AtlasTexture_w2pib")
 
 [node name="PokerUI" type="Control" parent="." unique_id=1684553306]
@@ -174,6 +184,7 @@ offset_bottom = 62.0
 grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.9, 0.9)
+mouse_filter = 2
 
 [node name="ActionButtons" type="Control" parent="PokerUI" unique_id=836351287]
 visible = false
