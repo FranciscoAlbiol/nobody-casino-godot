@@ -1,12 +1,51 @@
 {
 	"start": {
 		"name": "Box",
-		"text": "Hello there",
-		"expression": "neutral",
+		"text": "Hello there!",
 		"next": "1"
 	},
 	
 	"1": {
-		"text": "I am reading text from a json",
+		"text": "I'll be guiding you on how to correctly format a dialogue JSON.",
+		"next": "2"
+	},
+	
+	"2": {
+		"text": "First off, you don't need to define every property in every single line. 
+				If a setting doesn't change after it's introduced, you don't need to repeat it.",
+		"next": "3"
+	},
+	
+	"3": {
+		"text": "For example, if this NPC is the only one speaking in the conversation, there's no need to set their name every time.",
+		"next": "4"
+	},
+	
+	"4": {
+		"text": "You can also adjust how fast the dialogue appears using 'text_speed'.",
+		"next": "fast_text"
+	},
+	
+	"fast_text": {
+		"text": "A smaller number means the text will type out faster.",
+		"text_speed": 0.01,
+		"next": "slow_text"
+	},
+	
+	"slow_text": {
+		"text": "A larger number means the text will type out slower.",
+		"text_speed": 0.05,
+		"next": "normal_text"
+	},
+	
+	"normal_text": {
+		"text": "By default, it's set to a comfortable 0.03.",
+		"text_speed": 0.03,
+		"next": "end"
+	},
+	
+	"end": {
+		"text": "Alright, that's just about everything for now. 
+				The dev is currently working on adding choices, so give them time."
 	}
 }

@@ -32,6 +32,9 @@ func get_json(source: String):
 	start_dialogue()
 
 func load_block(block : Dictionary):
+	if(block.has("text_speed")):
+		text_speed = block["text_speed"]
+		
 	if block.has("text"):
 		if typing_tween and typing_tween.is_running():
 			typing_tween.kill()

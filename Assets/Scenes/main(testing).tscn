@@ -57,6 +57,9 @@ shape = SubResource("BoxShape3D_ox5ug")
 
 [node name="PokerMinigame" parent="PokerInteractable2" unique_id=514339496 instance=ExtResource("7_ox5ug")]
 
+[node name="Table" parent="PokerInteractable2/PokerMinigame" index="0" unique_id=233495553]
+transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, -0.011870623, 0)
+
 [node name="GameManager" type="Node" parent="." unique_id=2100894281]
 script = ExtResource("1_ypjvi")
 
@@ -123,4 +126,3 @@ shape = SubResource("BoxShape3D_ox5ug")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54025936, 0, 0)
 
 [editable path="PokerInteractable2/PokerMinigame"]
-[editable path="PokerGameinteractable/PokerMinigame"]
