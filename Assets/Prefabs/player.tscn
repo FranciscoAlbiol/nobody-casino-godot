@@ -21,6 +21,9 @@ load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
 atlas = SubResource("CompressedTexture2D_x4ukv")
 region = Rect2(30.495, 795, 124.815, 120)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_x4ukv"]
+size = Vector3(3.3808594, 1, 2.05542)
+
 [node name="Player" type="CharacterBody3D" unique_id=821089496]
 script = ExtResource("1_l4mef")
 
@@ -137,6 +140,18 @@ theme_override_font_sizes/font_size = 50
 text = "E"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Player UI/InteractionIcon" unique_id=573652396]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player UI/InteractionIcon/StaticBody3D" unique_id=926938842]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_x4ukv")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Player UI/InteractionIcon/StaticBody3D" unique_id=466363933]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player UI/InteractionIcon/StaticBody3D/StaticBody3D" unique_id=187095490]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_x4ukv")
 
 [node name="General UI" parent="." unique_id=161449107 instance=ExtResource("3_x4ukv")]
 mouse_filter = 2
