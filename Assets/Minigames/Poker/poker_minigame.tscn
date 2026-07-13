@@ -16,7 +16,46 @@
 [ext_resource type="Resource" uid="uid://bkqdu16qeq375" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_J.tres" id="13_ld27i"]
 [ext_resource type="Resource" uid="uid://c3idcske05m2v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_K.tres" id="14_m2qxr"]
 [ext_resource type="Resource" uid="uid://bguywgmm8kta7" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_Q.tres" id="15_55vvi"]
+[ext_resource type="Resource" uid="uid://d2e47l5omtp7e" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_1.tres" id="16_wssu4"]
+[ext_resource type="Resource" uid="uid://csnn4xi6rv0kc" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_2.tres" id="17_ayve1"]
 [ext_resource type="Texture2D" uid="uid://nky5n4gq2oh3" path="res://Assets/Sprites/UI/UI.png" id="17_w2pib"]
+[ext_resource type="Resource" uid="uid://bj68xltda4rgt" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_3.tres" id="18_b6lki"]
+[ext_resource type="Resource" uid="uid://c2s2jo1s14jee" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_4.tres" id="19_kivld"]
+[ext_resource type="Resource" uid="uid://5qxv7rfwygsv" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_5.tres" id="20_e5roa"]
+[ext_resource type="Resource" uid="uid://ctini5n6pbpf4" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_6.tres" id="21_68v34"]
+[ext_resource type="Resource" uid="uid://djcdiqwn5imtr" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_7.tres" id="22_l27ux"]
+[ext_resource type="Resource" uid="uid://cqcm8hf4io6rk" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_8.tres" id="23_qwbwc"]
+[ext_resource type="Resource" uid="uid://kyeratqblcpn" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_9.tres" id="24_e1ypu"]
+[ext_resource type="Resource" uid="uid://xmiicrd8cefx" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_10.tres" id="25_1d7v1"]
+[ext_resource type="Resource" uid="uid://b8y2jm8eltbq1" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_J.tres" id="26_13dds"]
+[ext_resource type="Resource" uid="uid://cfae68rvtxn5u" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_K.tres" id="27_d7mk2"]
+[ext_resource type="Resource" uid="uid://bajp5q7tey4vn" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_Q.tres" id="28_44q0v"]
+[ext_resource type="Resource" uid="uid://1i42fq0mu4pe" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_1.tres" id="29_hjbdk"]
+[ext_resource type="Resource" uid="uid://bofvwc28f2ear" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_2.tres" id="30_gvxsy"]
+[ext_resource type="Resource" uid="uid://bcaorwenuc7xs" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_3.tres" id="31_5ou0w"]
+[ext_resource type="Resource" uid="uid://ctk2ytpx3dqiu" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_4.tres" id="32_unqch"]
+[ext_resource type="Resource" uid="uid://bpq5nbmx0cctg" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_5.tres" id="33_xqg04"]
+[ext_resource type="Resource" uid="uid://c2x6ea511eq3c" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_6.tres" id="34_3st3j"]
+[ext_resource type="Resource" uid="uid://cgkjsth3c3uqo" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_7.tres" id="35_10i6a"]
+[ext_resource type="Resource" uid="uid://cfep12n1aqo7r" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_8.tres" id="36_xm8jh"]
+[ext_resource type="Resource" uid="uid://bn8gc5xbbskkx" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_9.tres" id="37_3eo2w"]
+[ext_resource type="Resource" uid="uid://f7w46x03c67j" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_10.tres" id="38_cb1x5"]
+[ext_resource type="Resource" uid="uid://ct625fl2xphg1" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_J.tres" id="39_eugp6"]
+[ext_resource type="Resource" uid="uid://b3i4q68u38c8x" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_K.tres" id="40_gijt4"]
+[ext_resource type="Resource" uid="uid://fskmhxxijtm" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_Q.tres" id="41_28lre"]
+[ext_resource type="Resource" uid="uid://c7fy8edpu7qdb" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_1.tres" id="42_i0si5"]
+[ext_resource type="Resource" uid="uid://cfalqdmyisqex" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_2.tres" id="43_f3q8e"]
+[ext_resource type="Resource" uid="uid://baijrgy817bnx" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_3.tres" id="44_1vjbr"]
+[ext_resource type="Resource" uid="uid://tvl6bro70oga" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_4.tres" id="45_2e1yd"]
+[ext_resource type="Resource" uid="uid://d1pnoa1tmmapw" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_5.tres" id="46_nhuwy"]
+[ext_resource type="Resource" uid="uid://cf64k5v7ucu72" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_6.tres" id="47_6tt6m"]
+[ext_resource type="Resource" uid="uid://c2nyxccpn1m8n" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_7.tres" id="48_1jsy4"]
+[ext_resource type="Resource" uid="uid://4sjics3yw2du" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_8.tres" id="49_iubka"]
+[ext_resource type="Resource" uid="uid://cblu3d8mvcrij" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_9.tres" id="50_lrv0w"]
+[ext_resource type="Resource" uid="uid://b1yypebb1lkdk" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_10.tres" id="51_80mnw"]
+[ext_resource type="Resource" uid="uid://2g1py16a4amc" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_J.tres" id="52_dv13d"]
+[ext_resource type="Resource" uid="uid://bkp7uk82nxn1h" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_K.tres" id="53_ds7nf"]
+[ext_resource type="Resource" uid="uid://getlbbjy26yf" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_Q.tres" id="54_5uju2"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iary6"]
 load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
@@ -89,7 +128,7 @@ region = Rect2(1536, 496, 424, 424)
 
 [node name="PokerMinigame" type="Node3D" unique_id=514339496 node_paths=PackedStringArray("p_card1", "p_card2", "npc1_cards", "npc2_cards", "t_cards")]
 script = ExtResource("1_k2m0y")
-deck = Array[ExtResource("2_21fr2")]([ExtResource("3_w2pib"), ExtResource("4_glel0"), ExtResource("5_bhiai"), ExtResource("6_4urwr"), ExtResource("7_evbgm"), ExtResource("8_iary6"), ExtResource("9_mhmyh"), ExtResource("10_lwmbb"), ExtResource("11_s3uwp"), ExtResource("12_ge2hy"), ExtResource("13_ld27i"), ExtResource("14_m2qxr"), ExtResource("15_55vvi")])
+deck = Array[ExtResource("2_21fr2")]([ExtResource("3_w2pib"), ExtResource("4_glel0"), ExtResource("5_bhiai"), ExtResource("6_4urwr"), ExtResource("7_evbgm"), ExtResource("8_iary6"), ExtResource("9_mhmyh"), ExtResource("10_lwmbb"), ExtResource("11_s3uwp"), ExtResource("12_ge2hy"), ExtResource("13_ld27i"), ExtResource("14_m2qxr"), ExtResource("15_55vvi"), ExtResource("16_wssu4"), ExtResource("17_ayve1"), ExtResource("18_b6lki"), ExtResource("19_kivld"), ExtResource("20_e5roa"), ExtResource("21_68v34"), ExtResource("22_l27ux"), ExtResource("23_qwbwc"), ExtResource("24_e1ypu"), ExtResource("25_1d7v1"), ExtResource("26_13dds"), ExtResource("27_d7mk2"), ExtResource("28_44q0v"), ExtResource("29_hjbdk"), ExtResource("30_gvxsy"), ExtResource("31_5ou0w"), ExtResource("32_unqch"), ExtResource("33_xqg04"), ExtResource("34_3st3j"), ExtResource("35_10i6a"), ExtResource("36_xm8jh"), ExtResource("37_3eo2w"), ExtResource("38_cb1x5"), ExtResource("39_eugp6"), ExtResource("40_gijt4"), ExtResource("41_28lre"), ExtResource("42_i0si5"), ExtResource("43_f3q8e"), ExtResource("44_1vjbr"), ExtResource("45_2e1yd"), ExtResource("46_nhuwy"), ExtResource("47_6tt6m"), ExtResource("48_1jsy4"), ExtResource("49_iubka"), ExtResource("50_lrv0w"), ExtResource("51_80mnw"), ExtResource("52_dv13d"), ExtResource("53_ds7nf"), ExtResource("54_5uju2")])
 p_card1 = NodePath("Player Cards/PlayerCard1")
 p_card2 = NodePath("Player Cards/PlayerCard2")
 npc1_cards = NodePath("NPC1 Cards")
