@@ -106,6 +106,27 @@ texture = ExtResource("5_t8s3k")
 [node name="interaction_test_camera" type="Camera3D" parent="NPC_mas o menos montado/NPC_Example" unique_id=1438568812]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
 
+[node name="NPC_mas o menos montado" type="MeshInstance3D" parent="NPC_mas o menos montado" unique_id=972345157 node_paths=PackedStringArray("interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
+script = ExtResource("2_a5065")
+interactable_camera = NodePath("NPC_Example/interaction_test_camera")
+dialogue_json = "res://Assets/Dialogue/dialogue_test.json"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NPC_mas o menos montado/NPC_mas o menos montado" unique_id=1008371355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5571079)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_mas o menos montado/NPC_mas o menos montado/StaticBody3D" unique_id=807589220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53527117)
+shape = SubResource("BoxShape3D_rg1sq")
+
+[node name="NPC_Example" type="Sprite3D" parent="NPC_mas o menos montado/NPC_mas o menos montado" unique_id=920900562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99175835)
+material_override = SubResource("ShaderMaterial_y4xre")
+texture = ExtResource("5_t8s3k")
+
+[node name="interaction_test_camera" type="Camera3D" parent="NPC_mas o menos montado/NPC_mas o menos montado/NPC_Example" unique_id=1832397501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")
 
