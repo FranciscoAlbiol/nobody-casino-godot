@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://dbdtx2iun5dwy"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7wc3w"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_7wc3w")
+region = Rect2(0, 0, 2574, 1490)

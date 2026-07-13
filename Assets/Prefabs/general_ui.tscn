@@ -1,0 +1,210 @@
+[gd_scene format=3 uid="uid://c7q5tanwr7u6t"]
+
+[ext_resource type="Script" uid="uid://cobk2f8d0twlx" path="res://Assets/Scripts/general_ui.gd" id="1_64wu3"]
+[ext_resource type="Texture2D" uid="uid://tiqgvcrcf44a" path="res://Assets/Sprites/UI/UI_Atlas.tres" id="1_cw4yd"]
+[ext_resource type="Texture2D" uid="uid://dp2bh6mtg0ler" path="res://Assets/Sprites/UI/pause_base.png" id="2_5nihr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vcbsg"]
+load_path = "res://.godot/imported/General_UI.png-7238612677d42728894fc68e811c6988.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqb77"]
+atlas = SubResource("CompressedTexture2D_vcbsg")
+region = Rect2(450, 50, 102.985, 100)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_64wu3"]
+load_path = "res://.godot/imported/General_UI.png-7238612677d42728894fc68e811c6988.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vcbsg"]
+atlas = SubResource("CompressedTexture2D_64wu3")
+region = Rect2(10, 100, 200, 70)
+
+[node name="General UI" type="Control" unique_id=161449107]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_64wu3")
+
+[node name="MoneyIcon" type="TextureRect" parent="." unique_id=441414613]
+layout_mode = 0
+offset_left = 1066.0
+offset_top = 21.0
+offset_right = 1167.0
+offset_bottom = 149.0
+scale = Vector2(0.5, 0.5)
+texture = SubResource("AtlasTexture_bqb77")
+stretch_mode = 3
+
+[node name="MoneyText" type="Label" parent="." unique_id=322990602]
+layout_mode = 0
+offset_left = 989.0
+offset_top = 39.0
+offset_right = 1060.0
+offset_bottom = 74.0
+theme_override_font_sizes/font_size = 20
+text = "10000"
+horizontal_alignment = 2
+
+[node name="PauseMenu" type="TextureRect" parent="." unique_id=905372173]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -391.5
+offset_top = -454.0
+offset_right = 391.5
+offset_bottom = 454.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.6, 0.6)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("2_5nihr")
+
+[node name="PausedText" type="Label" parent="PauseMenu" unique_id=2082635324]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 115.0
+offset_right = 174.0
+offset_bottom = 184.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_font_sizes/font_size = 50
+text = "GAME PAUSED"
+
+[node name="VolumeLabel" type="Label" parent="PauseMenu" unique_id=1400422147]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -175.0
+offset_top = 322.33337
+offset_right = 174.0
+offset_bottom = 391.33337
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_font_sizes/font_size = 40
+text = "Volume"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VolumeSlider" type="HSlider" parent="PauseMenu" unique_id=1355169798]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 400.6667
+offset_right = 150.0
+offset_bottom = 416.6667
+grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset_ratio = Vector2(0.5, 0)
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 0.5
+
+[node name="SensitivitySlider2" type="Label" parent="PauseMenu" unique_id=1219182191]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -174.99994
+offset_top = 474.0
+offset_right = 174.00006
+offset_bottom = 543.0
+grow_horizontal = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+theme_override_font_sizes/font_size = 40
+text = "Sensitivity"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SensitivitySlider" type="HSlider" parent="PauseMenu" unique_id=758849377]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -150.0
+offset_top = 554.0
+offset_right = 150.0
+offset_bottom = 570.0
+grow_horizontal = 2
+scale = Vector2(2, 2)
+pivot_offset_ratio = Vector2(0.5, 0)
+min_value = 0.001
+max_value = 0.01
+step = 0.001
+value = 0.002
+
+[node name="BackTitleButton" type="TextureButton" parent="PauseMenu" unique_id=1999527243]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.33325
+offset_top = 649.0
+offset_right = 102.66675
+offset_bottom = 720.0
+grow_horizontal = 2
+scale = Vector2(1.3, 1.3)
+pivot_offset_ratio = Vector2(0.5, 0)
+texture_normal = ExtResource("1_cw4yd")
+
+[node name="Label" type="Label" parent="PauseMenu/BackTitleButton" unique_id=1285437193]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -17.5
+offset_right = 72.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 25
+text = "Back to title"
+
+[node name="BackButton" type="TextureButton" parent="PauseMenu" unique_id=1696281635]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -103.33325
+offset_top = 747.3333
+offset_right = 102.66675
+offset_bottom = 818.3333
+grow_horizontal = 2
+scale = Vector2(1.3, 1.3)
+pivot_offset_ratio = Vector2(0.5, 0)
+texture_normal = SubResource("AtlasTexture_vcbsg")
+
+[node name="Label" type="Label" parent="PauseMenu/BackButton" unique_id=462772793]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -72.5
+offset_top = -17.5
+offset_right = 72.5
+offset_bottom = 17.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_font_sizes/font_size = 25
+text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1

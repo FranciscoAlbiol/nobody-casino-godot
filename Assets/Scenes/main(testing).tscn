@@ -1,15 +1,34 @@
 [gd_scene format=3 uid="uid://ddyhxnbw3w0wu"]
 
+[ext_resource type="PackedScene" uid="uid://dyq223dlaw8ks" path="res://Assets/Prefabs/dialogue_layout.tscn" id="1_rg1sq"]
 [ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
+[ext_resource type="Script" uid="uid://pv60l6r31blb" path="res://Assets/Scripts/game_manager.gd" id="1_ypjvi"]
 [ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
+[ext_resource type="Script" uid="uid://cpuoewxw8yd80" path="res://Assets/Scripts/MinigameManager.gd" id="2_ofgdj"]
+[ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="5_t8s3k"]
+[ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
+[ext_resource type="PackedScene" uid="uid://dq8n2bhm0nws7" path="res://Assets/Minigames/Poker/poker_minigame.tscn" id="7_ox5ug"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
+size = Vector3(3.3808594, 1, 2.05542)
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_a5065"]
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_rg1sq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y4xre"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y4xre"]
+render_priority = 0
+shader = ExtResource("5_y4xre")
+shader_parameter/albedo_texture = ExtResource("5_t8s3k")
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_y4xre")
+shader_parameter/use_billboard = true
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/strength = 0.7
+shader_parameter/fps = 4.0
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssmyu"]
 
@@ -21,6 +40,33 @@ background_mode = 2
 sky = SubResource("Sky_a5065")
 
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
+
+[node name="PokerInteractable2" type="Node3D" parent="." unique_id=2066997590 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1538792, 0.25500003, 5.495723)
+script = ExtResource("2_a5065")
+minigame_to_start = "poker"
+minigame_node = NodePath("PokerMinigame")
+interactable_camera = NodePath("PokerMinigame/Camera3D")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PokerInteractable2" unique_id=1846439848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerInteractable2/StaticBody3D2" unique_id=609687611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_ox5ug")
+
+[node name="PokerMinigame" parent="PokerInteractable2" unique_id=514339496 instance=ExtResource("7_ox5ug")]
+
+[node name="Table" parent="PokerInteractable2/PokerMinigame" index="0" unique_id=233495553]
+transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, -0.011870623, 0)
+
+[node name="GameManager" type="Node" parent="." unique_id=2100894281]
+script = ExtResource("1_ypjvi")
+
+[node name="MinigameManager" type="Node" parent="GameManager" unique_id=479107949]
+script = ExtResource("2_ofgdj")
+
+[node name="Dialogue Layout" parent="." unique_id=1785937985 instance=ExtResource("1_rg1sq")]
 
 [node name="Player" parent="." unique_id=821089496 instance=ExtResource("1_ssmyu")]
 
@@ -39,19 +85,65 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
 shadow_enabled = true
 sky_mode = 1
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1946014716 node_paths=PackedStringArray("interactable_camera")]
+[node name="NPC_mas o menos montado" type="MeshInstance3D" parent="." unique_id=1946014716 node_paths=PackedStringArray("interactable_camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
-mesh = SubResource("BoxMesh_a5065")
 script = ExtResource("2_a5065")
-interactable_camera = NodePath("interaction_test_camera")
+interactable_camera = NodePath("NPC_Example/interaction_test_camera")
+dialogue_json = "res://Assets/Dialogue/dialogue_test.json"
 
-[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1073172779]
+[node name="StaticBody3D" type="StaticBody3D" parent="NPC_mas o menos montado" unique_id=1073172779]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5571079)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1683407702]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_mas o menos montado/StaticBody3D" unique_id=1683407702]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53527117)
 shape = SubResource("BoxShape3D_rg1sq")
 
-[node name="interaction_test_camera" type="Camera3D" parent="MeshInstance3D" unique_id=1438568812]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.625783)
+[node name="NPC_Example" type="Sprite3D" parent="NPC_mas o menos montado" unique_id=1511726362]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99175835)
+material_override = SubResource("ShaderMaterial_y4xre")
+texture = ExtResource("5_t8s3k")
+
+[node name="interaction_test_camera" type="Camera3D" parent="NPC_mas o menos montado/NPC_Example" unique_id=1438568812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
+
+[node name="NPC_mas o menos montado" type="MeshInstance3D" parent="NPC_mas o menos montado" unique_id=972345157 node_paths=PackedStringArray("interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
+script = ExtResource("2_a5065")
+interactable_camera = NodePath("NPC_Example/interaction_test_camera")
+dialogue_json = "res://Assets/Dialogue/dialogue_test.json"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NPC_mas o menos montado/NPC_mas o menos montado" unique_id=1008371355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.5571079)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NPC_mas o menos montado/NPC_mas o menos montado/StaticBody3D" unique_id=807589220]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.53527117)
+shape = SubResource("BoxShape3D_rg1sq")
+
+[node name="NPC_Example" type="Sprite3D" parent="NPC_mas o menos montado/NPC_mas o menos montado" unique_id=920900562]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.99175835)
+material_override = SubResource("ShaderMaterial_y4xre")
+texture = ExtResource("5_t8s3k")
+
+[node name="interaction_test_camera" type="Camera3D" parent="NPC_mas o menos montado/NPC_mas o menos montado/NPC_Example" unique_id=1832397501]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.0604334)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
 environment = SubResource("Environment_rg1sq")
+
+[node name="PokerGameinteractable" type="Node3D" parent="." unique_id=412245585 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.862253, 0, 0)
+script = ExtResource("2_a5065")
+minigame_to_start = "poker"
+minigame_node = NodePath("PokerMinigame")
+interactable_camera = NodePath("PokerMinigame/Camera3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="PokerGameinteractable" unique_id=369824732]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerGameinteractable/StaticBody3D" unique_id=2138494489]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_ox5ug")
+
+[node name="PokerMinigame" parent="PokerGameinteractable" unique_id=1016006478 instance=ExtResource("7_ox5ug")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54025936, 0, 0)
+
+[editable path="PokerInteractable2/PokerMinigame"]

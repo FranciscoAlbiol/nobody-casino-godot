@@ -1,0 +1,345 @@
+[gd_scene format=3 uid="uid://dq8n2bhm0nws7"]
+
+[ext_resource type="Script" uid="uid://dlgncinqde7mp" path="res://Assets/Minigames/Poker/poker_manager.gd" id="1_k2m0y"]
+[ext_resource type="Texture2D" uid="uid://y7wxnngdwj2n" path="res://Assets/Minigames/Poker/poker_card_spritesheet.png" id="1_q1r40"]
+[ext_resource type="Script" uid="uid://cqhl68g8oikew" path="res://Assets/Minigames/Poker/PokerCard.gd" id="2_21fr2"]
+[ext_resource type="Resource" uid="uid://cf825cjhdw365" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_1.tres" id="3_w2pib"]
+[ext_resource type="Resource" uid="uid://cgsuh1llxtttv" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_2.tres" id="4_glel0"]
+[ext_resource type="Resource" uid="uid://clsh2u7idxccb" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_3.tres" id="5_bhiai"]
+[ext_resource type="Resource" uid="uid://d0nwhtf6gwtxo" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_4.tres" id="6_4urwr"]
+[ext_resource type="Resource" uid="uid://b57r75vqe7r4v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_5.tres" id="7_evbgm"]
+[ext_resource type="Resource" uid="uid://dee0yltl23lvg" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_6.tres" id="8_iary6"]
+[ext_resource type="Resource" uid="uid://dqejcr2oth0ko" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_7.tres" id="9_mhmyh"]
+[ext_resource type="Resource" uid="uid://kb15yx8h6u50" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_8.tres" id="10_lwmbb"]
+[ext_resource type="Resource" uid="uid://bnfhu0npqeqyu" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_9.tres" id="11_s3uwp"]
+[ext_resource type="Resource" uid="uid://bu2tlo650mxff" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_10.tres" id="12_ge2hy"]
+[ext_resource type="Resource" uid="uid://bkqdu16qeq375" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_J.tres" id="13_ld27i"]
+[ext_resource type="Resource" uid="uid://c3idcske05m2v" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_K.tres" id="14_m2qxr"]
+[ext_resource type="Resource" uid="uid://bguywgmm8kta7" path="res://Assets/Minigames/Poker/Cards/Clubs/pokerClub_Q.tres" id="15_55vvi"]
+[ext_resource type="Resource" uid="uid://d2e47l5omtp7e" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_1.tres" id="16_wssu4"]
+[ext_resource type="Resource" uid="uid://csnn4xi6rv0kc" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_2.tres" id="17_ayve1"]
+[ext_resource type="Texture2D" uid="uid://nky5n4gq2oh3" path="res://Assets/Sprites/UI/UI.png" id="17_w2pib"]
+[ext_resource type="Resource" uid="uid://bj68xltda4rgt" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_3.tres" id="18_b6lki"]
+[ext_resource type="Resource" uid="uid://c2s2jo1s14jee" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_4.tres" id="19_kivld"]
+[ext_resource type="Resource" uid="uid://5qxv7rfwygsv" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_5.tres" id="20_e5roa"]
+[ext_resource type="Resource" uid="uid://ctini5n6pbpf4" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_6.tres" id="21_68v34"]
+[ext_resource type="Resource" uid="uid://djcdiqwn5imtr" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_7.tres" id="22_l27ux"]
+[ext_resource type="Resource" uid="uid://cqcm8hf4io6rk" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_8.tres" id="23_qwbwc"]
+[ext_resource type="Resource" uid="uid://kyeratqblcpn" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_9.tres" id="24_e1ypu"]
+[ext_resource type="Resource" uid="uid://xmiicrd8cefx" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_10.tres" id="25_1d7v1"]
+[ext_resource type="Resource" uid="uid://b8y2jm8eltbq1" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_J.tres" id="26_13dds"]
+[ext_resource type="Resource" uid="uid://cfae68rvtxn5u" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_K.tres" id="27_d7mk2"]
+[ext_resource type="Resource" uid="uid://bajp5q7tey4vn" path="res://Assets/Minigames/Poker/Cards/Diamonds/pokerDiamond_Q.tres" id="28_44q0v"]
+[ext_resource type="Resource" uid="uid://1i42fq0mu4pe" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_1.tres" id="29_hjbdk"]
+[ext_resource type="Resource" uid="uid://bofvwc28f2ear" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_2.tres" id="30_gvxsy"]
+[ext_resource type="Resource" uid="uid://bcaorwenuc7xs" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_3.tres" id="31_5ou0w"]
+[ext_resource type="Resource" uid="uid://ctk2ytpx3dqiu" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_4.tres" id="32_unqch"]
+[ext_resource type="Resource" uid="uid://bpq5nbmx0cctg" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_5.tres" id="33_xqg04"]
+[ext_resource type="Resource" uid="uid://c2x6ea511eq3c" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_6.tres" id="34_3st3j"]
+[ext_resource type="Resource" uid="uid://cgkjsth3c3uqo" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_7.tres" id="35_10i6a"]
+[ext_resource type="Resource" uid="uid://cfep12n1aqo7r" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_8.tres" id="36_xm8jh"]
+[ext_resource type="Resource" uid="uid://bn8gc5xbbskkx" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_9.tres" id="37_3eo2w"]
+[ext_resource type="Resource" uid="uid://f7w46x03c67j" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_10.tres" id="38_cb1x5"]
+[ext_resource type="Resource" uid="uid://ct625fl2xphg1" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_J.tres" id="39_eugp6"]
+[ext_resource type="Resource" uid="uid://b3i4q68u38c8x" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_K.tres" id="40_gijt4"]
+[ext_resource type="Resource" uid="uid://fskmhxxijtm" path="res://Assets/Minigames/Poker/Cards/Hearts/pokerHeart_Q.tres" id="41_28lre"]
+[ext_resource type="Resource" uid="uid://c7fy8edpu7qdb" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_1.tres" id="42_i0si5"]
+[ext_resource type="Resource" uid="uid://cfalqdmyisqex" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_2.tres" id="43_f3q8e"]
+[ext_resource type="Resource" uid="uid://baijrgy817bnx" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_3.tres" id="44_1vjbr"]
+[ext_resource type="Resource" uid="uid://tvl6bro70oga" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_4.tres" id="45_2e1yd"]
+[ext_resource type="Resource" uid="uid://d1pnoa1tmmapw" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_5.tres" id="46_nhuwy"]
+[ext_resource type="Resource" uid="uid://cf64k5v7ucu72" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_6.tres" id="47_6tt6m"]
+[ext_resource type="Resource" uid="uid://c2nyxccpn1m8n" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_7.tres" id="48_1jsy4"]
+[ext_resource type="Resource" uid="uid://4sjics3yw2du" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_8.tres" id="49_iubka"]
+[ext_resource type="Resource" uid="uid://cblu3d8mvcrij" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_9.tres" id="50_lrv0w"]
+[ext_resource type="Resource" uid="uid://b1yypebb1lkdk" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_10.tres" id="51_80mnw"]
+[ext_resource type="Resource" uid="uid://2g1py16a4amc" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_J.tres" id="52_dv13d"]
+[ext_resource type="Resource" uid="uid://bkp7uk82nxn1h" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_K.tres" id="53_ds7nf"]
+[ext_resource type="Resource" uid="uid://getlbbjy26yf" path="res://Assets/Minigames/Poker/Cards/Spades/pokerSpades_Q.tres" id="54_5uju2"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iary6"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mhmyh"]
+atlas = SubResource("CompressedTexture2D_iary6")
+region = Rect2(0, 0, 198, 298)
+
+[sub_resource type="BoxMesh" id="BoxMesh_6hyqc"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w2pib"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_glel0"]
+atlas = SubResource("CompressedTexture2D_w2pib")
+region = Rect2(0, 0, 198, 298)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_21fr2"]
+load_path = "res://.godot/imported/poker_card_spritesheet.png-d5217539c7b2e43d4ebe9762778bf168.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2pib"]
+atlas = SubResource("CompressedTexture2D_21fr2")
+region = Rect2(0, 0, 198, 298)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_glel0"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhiai"]
+atlas = SubResource("CompressedTexture2D_glel0")
+region = Rect2(576, 1624, 576, 256)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4urwr"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evbgm"]
+atlas = SubResource("CompressedTexture2D_4urwr")
+region = Rect2(552, 1344, 600, 280)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bhiai"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4urwr"]
+atlas = SubResource("CompressedTexture2D_bhiai")
+region = Rect2(1152, 1392, 432, 488)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_evbgm"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iary6"]
+atlas = SubResource("CompressedTexture2D_evbgm")
+region = Rect2(2064, 456, 584, 320)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mhmyh"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwmbb"]
+atlas = SubResource("CompressedTexture2D_mhmyh")
+region = Rect2(2064, 1064, 592, 456)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_s3uwp"]
+load_path = "res://.godot/imported/UI.png-102a46fbec954942b5a087460e79e2d1.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ge2hy"]
+atlas = SubResource("CompressedTexture2D_s3uwp")
+region = Rect2(1528, 920, 432, 392)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ld27i"]
+atlas = ExtResource("17_w2pib")
+region = Rect2(1536, 496, 424, 424)
+
+[node name="PokerMinigame" type="Node3D" unique_id=514339496 node_paths=PackedStringArray("p_card1", "p_card2", "npc1_cards", "npc2_cards", "t_cards")]
+script = ExtResource("1_k2m0y")
+deck = Array[ExtResource("2_21fr2")]([ExtResource("3_w2pib"), ExtResource("4_glel0"), ExtResource("5_bhiai"), ExtResource("6_4urwr"), ExtResource("7_evbgm"), ExtResource("8_iary6"), ExtResource("9_mhmyh"), ExtResource("10_lwmbb"), ExtResource("11_s3uwp"), ExtResource("12_ge2hy"), ExtResource("13_ld27i"), ExtResource("14_m2qxr"), ExtResource("15_55vvi"), ExtResource("16_wssu4"), ExtResource("17_ayve1"), ExtResource("18_b6lki"), ExtResource("19_kivld"), ExtResource("20_e5roa"), ExtResource("21_68v34"), ExtResource("22_l27ux"), ExtResource("23_qwbwc"), ExtResource("24_e1ypu"), ExtResource("25_1d7v1"), ExtResource("26_13dds"), ExtResource("27_d7mk2"), ExtResource("28_44q0v"), ExtResource("29_hjbdk"), ExtResource("30_gvxsy"), ExtResource("31_5ou0w"), ExtResource("32_unqch"), ExtResource("33_xqg04"), ExtResource("34_3st3j"), ExtResource("35_10i6a"), ExtResource("36_xm8jh"), ExtResource("37_3eo2w"), ExtResource("38_cb1x5"), ExtResource("39_eugp6"), ExtResource("40_gijt4"), ExtResource("41_28lre"), ExtResource("42_i0si5"), ExtResource("43_f3q8e"), ExtResource("44_1vjbr"), ExtResource("45_2e1yd"), ExtResource("46_nhuwy"), ExtResource("47_6tt6m"), ExtResource("48_1jsy4"), ExtResource("49_iubka"), ExtResource("50_lrv0w"), ExtResource("51_80mnw"), ExtResource("52_dv13d"), ExtResource("53_ds7nf"), ExtResource("54_5uju2")])
+p_card1 = NodePath("Player Cards/PlayerCard1")
+p_card2 = NodePath("Player Cards/PlayerCard2")
+npc1_cards = NodePath("NPC1 Cards")
+npc2_cards = NodePath("NPC2 Cards")
+t_cards = [NodePath("Table Cards/tableCard1"), NodePath("Table Cards/tableCard2"), NodePath("Table Cards/tableCard3"), NodePath("Table Cards/tableCard4"), NodePath("Table Cards/tableCard5")]
+back_card_texture = SubResource("AtlasTexture_mhmyh")
+
+[node name="Table" type="MeshInstance3D" parent="." unique_id=233495553]
+transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, 0, 0)
+mesh = SubResource("BoxMesh_6hyqc")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1377900123]
+transform = Transform3D(1, 0, 0, 0, 0.86603415, 0.49998486, 0, -0.49998486, 0.86603415, 0, 1.1809328, 1.3804345)
+
+[node name="NPC2 Cards" type="Node3D" parent="." unique_id=898684447]
+transform = Transform3D(0.10641897, 0.3241321, -0.9400072, -0.036462333, 0.94601184, 0.32207468, 0.9936527, 0, 0.11249222, -1.5, 0.68230116, 0)
+
+[node name="npcCard1" type="Sprite3D" parent="NPC2 Cards" unique_id=774186305]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833836e-09, -9.313226e-10, -1.8626451e-09, 0.1, 0.030581728, 0, 0.0034621954)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="npcCard2" type="Sprite3D" parent="NPC2 Cards" unique_id=2021267031]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0.014)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="Table Cards" type="Node3D" parent="." unique_id=926857430]
+transform = Transform3D(1.0000001, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0.682, 0.29631948)
+
+[node name="tableCard1" type="Sprite3D" parent="Table Cards" unique_id=998363508]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833834e-09, -9.313226e-10, -1.8626451e-09, 0.1, -0.44, 0, 0.389)
+texture = SubResource("AtlasTexture_glel0")
+
+[node name="tableCard2" type="Sprite3D" parent="Table Cards" unique_id=378157288]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833834e-09, -9.313226e-10, -1.8626451e-09, 0.1, -0.22, 0, 0.389)
+texture = SubResource("AtlasTexture_glel0")
+
+[node name="tableCard3" type="Sprite3D" parent="Table Cards" unique_id=1748187876]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833834e-09, -9.313226e-10, -1.8626451e-09, 0.1, 0, 1.6993184e-08, 0.38875878)
+texture = SubResource("AtlasTexture_glel0")
+
+[node name="tableCard4" type="Sprite3D" parent="Table Cards" unique_id=1332706323]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833834e-09, -9.313226e-10, -1.8626451e-09, 0.1, 0.22, 0, 0.389)
+texture = SubResource("AtlasTexture_glel0")
+
+[node name="tableCard5" type="Sprite3D" parent="Table Cards" unique_id=496670115]
+transform = Transform3D(0.099999994, 0, 0, 3.7016437e-10, 0.1, -3.6833834e-09, -9.313226e-10, -1.8626451e-09, 0.1, 0.44, 0, 0.389)
+texture = SubResource("AtlasTexture_glel0")
+
+[node name="NPC1 Cards" type="Node3D" parent="." unique_id=698696511]
+transform = Transform3D(0.10504797, -0.35773236, -0.927897, 0.040242113, 0.9338242, -0.35546178, 0.9936528, 0, 0.11249223, 1.5, 0.68230116, 0)
+
+[node name="npcCard1" type="Sprite3D" parent="NPC1 Cards" unique_id=62754370]
+transform = Transform3D(0.099999994, -2.0820307e-10, -9.313226e-10, 6.9849193e-10, 0.1, -7.450581e-09, -9.313226e-10, -2.3570838e-11, 0.10000001, -0.008966401, 0, -0.0010150671)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="npcCard2" type="Sprite3D" parent="NPC1 Cards" unique_id=420191663]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0.014)
+texture = ExtResource("1_q1r40")
+hframes = 13
+vframes = 5
+
+[node name="Player Cards" type="Node3D" parent="." unique_id=1764694204]
+transform = Transform3D(1.0000002, 0, 0, 0, 0.9238795, 0.38268352, 0, -0.38268346, 0.9238796, 0.12277174, 0.725079, 1.117)
+
+[node name="PlayerCard2" type="Sprite3D" parent="Player Cards" unique_id=1569663461]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.099999994, 0, 0, 0, 0.09999999, -0.22, 0, 0)
+visible = false
+texture = SubResource("AtlasTexture_w2pib")
+
+[node name="PlayerCard1" type="Sprite3D" parent="Player Cards" unique_id=663582324]
+transform = Transform3D(0.09999999, 0, 0, 0, 0.09999999, 0, 0, 0, 0.09999999, -0.008138463, 0, 0)
+visible = false
+texture = SubResource("AtlasTexture_w2pib")
+
+[node name="PokerUI" type="Control" parent="." unique_id=1684553306]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1051.0
+offset_top = -588.0
+offset_right = 99.0
+offset_bottom = 62.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.9, 0.9)
+mouse_filter = 2
+
+[node name="ActionButtons" type="Control" parent="PokerUI" unique_id=836351287]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoldButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=591380067]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 891.00006
+offset_top = 502.0
+offset_right = 1467.0
+offset_bottom = 758.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_bhiai")
+
+[node name="RaiseButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=2030948690]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 867.0
+offset_top = 381.0
+offset_right = 1467.0
+offset_bottom = 661.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_evbgm")
+
+[node name="CheckButton" type="TextureButton" parent="PokerUI/ActionButtons" unique_id=2128177677]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 714.0
+offset_top = 405.0
+offset_right = 1146.0
+offset_bottom = 893.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_4urwr")
+
+[node name="RaiseMenu" type="Control" parent="PokerUI" unique_id=1653083041]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=2130291006]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 880.00006
+offset_top = 478.88892
+offset_right = 1464.0
+offset_bottom = 798.8889
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_iary6")
+
+[node name="BetButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=674030460]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 867.7778
+offset_top = 312.22223
+offset_right = 1467.7778
+offset_bottom = 768.2222
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.4, 0.4)
+texture_normal = SubResource("AtlasTexture_lwmbb")
+
+[node name="PiggyButton" type="TextureButton" parent="PokerUI/RaiseMenu" unique_id=276930233]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 664.44446
+offset_top = 391.11115
+offset_right = 1096.4446
+offset_bottom = 791.1112
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.5, 0.5)
+texture_normal = SubResource("AtlasTexture_ge2hy")
+texture_pressed = SubResource("AtlasTexture_ld27i")
+
+[node name="CurrentBetText" type="Label" parent="PokerUI/RaiseMenu" unique_id=1257995278]
+layout_mode = 0
+offset_left = 793.3334
+offset_top = 391.1111
+offset_right = 835.3334
+offset_bottom = 433.1111
+theme_override_font_sizes/font_size = 30
+text = "$ 5"
+horizontal_alignment = 1

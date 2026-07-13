@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://ddyhxnbw3w0wu"]
+
+[ext_resource type="PackedScene" uid="uid://dyq223dlaw8ks" path="res://Assets/Prefabs/dialogue_layout.tscn" id="1_rg1sq"]
+[ext_resource type="PackedScene" uid="uid://0frg8r6omj2r" path="res://Assets/Prefabs/player.tscn" id="1_ssmyu"]
+[ext_resource type="Script" uid="uid://fiww35vwqfx2" path="res://Assets/Scripts/Interactable.gd" id="2_a5065"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ssmyu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_a5065"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rg1sq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_ssmyu"]
+
+[sub_resource type="Sky" id="Sky_a5065"]
+sky_material = SubResource("ProceduralSkyMaterial_ssmyu")
+
+[sub_resource type="Environment" id="Environment_rg1sq"]
+background_mode = 2
+sky = SubResource("Sky_a5065")
+
+[node name="Main(Testing)" type="Node3D" unique_id=2136796361]
+
+[node name="Dialogue Layout" parent="." unique_id=1785937985 instance=ExtResource("1_rg1sq")]
+
+[node name="Player" parent="." unique_id=821089496 instance=ExtResource("1_ssmyu")]
+
+[node name="floor" type="StaticBody3D" parent="." unique_id=438289363]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="floor" unique_id=725971115]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+shape = SubResource("WorldBoundaryShape3D_aillh")
+
+[node name="floormesh" type="MeshInstance3D" parent="floor" unique_id=287940835]
+transform = Transform3D(50, 0, 0, 0, 50, 0, 0, 0, 50, 0, 0, 0)
+mesh = SubResource("PlaneMesh_ssmyu")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1985279397]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 23, 0)
+shadow_enabled = true
+sky_mode = 1
+
+[node name="cube_test" type="MeshInstance3D" parent="." unique_id=1946014716 node_paths=PackedStringArray("interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -5.2149124)
+mesh = SubResource("BoxMesh_a5065")
+script = ExtResource("2_a5065")
+interactable_camera = NodePath("interaction_test_camera")
+dialogue_json = "res://Assets/Dialogue/dialogue_test.json"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="cube_test" unique_id=1073172779]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="cube_test/StaticBody3D" unique_id=1683407702]
+shape = SubResource("BoxShape3D_rg1sq")
+
+[node name="interaction_test_camera" type="Camera3D" parent="cube_test" unique_id=1438568812]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.625783)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1220396770]
+environment = SubResource("Environment_rg1sq")
