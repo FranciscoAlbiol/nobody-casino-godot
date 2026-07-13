@@ -8,9 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cyvakgwow6dv" path="res://icon.svg" id="5_t8s3k"]
 [ext_resource type="Shader" uid="uid://duvniudctdxal" path="res://Assets/Scripts/line_boiling_shader.gdshader" id="5_y4xre"]
 [ext_resource type="PackedScene" uid="uid://dq8n2bhm0nws7" path="res://Assets/Minigames/Poker/poker_minigame.tscn" id="7_ox5ug"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
-size = Vector3(3.3808594, 1, 2.05542)
+[ext_resource type="PackedScene" uid="uid://bmotcku77j7re" path="res://Assets/Minigames/Roulette/Roulette_scene.tscn" id="9_nccby"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_aillh"]
 
@@ -39,26 +37,13 @@ sky_material = SubResource("ProceduralSkyMaterial_ssmyu")
 background_mode = 2
 sky = SubResource("Sky_a5065")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ox5ug"]
+size = Vector3(3.3808594, 1, 2.05542)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_i15o6"]
+size = Vector3(1, 5.518799, 2.5128174)
+
 [node name="Main(Testing)" type="Node3D" unique_id=2136796361]
-
-[node name="PokerInteractable2" type="Node3D" parent="." unique_id=2066997590 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1538792, 0.25500003, 5.495723)
-script = ExtResource("2_a5065")
-minigame_to_start = "poker"
-minigame_node = NodePath("PokerMinigame")
-interactable_camera = NodePath("PokerMinigame/Camera3D")
-
-[node name="StaticBody3D2" type="StaticBody3D" parent="PokerInteractable2" unique_id=1846439848]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, 0)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerInteractable2/StaticBody3D2" unique_id=609687611]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
-shape = SubResource("BoxShape3D_ox5ug")
-
-[node name="PokerMinigame" parent="PokerInteractable2" unique_id=514339496 instance=ExtResource("7_ox5ug")]
-
-[node name="Table" parent="PokerInteractable2/PokerMinigame" index="0" unique_id=233495553]
-transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, -0.011870623, 0)
 
 [node name="GameManager" type="Node" parent="." unique_id=2100894281]
 script = ExtResource("1_ypjvi")
@@ -145,5 +130,41 @@ shape = SubResource("BoxShape3D_ox5ug")
 
 [node name="PokerMinigame" parent="PokerGameinteractable" unique_id=1016006478 instance=ExtResource("7_ox5ug")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.54025936, 0, 0)
+
+[node name="PokerInteractable2" type="Node3D" parent="." unique_id=2066997590 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1538792, 0.25500003, 5.495723)
+script = ExtResource("2_a5065")
+minigame_to_start = "poker"
+minigame_node = NodePath("PokerMinigame")
+interactable_camera = NodePath("PokerMinigame/Camera3D")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="PokerInteractable2" unique_id=1846439848]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.255, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PokerInteractable2/StaticBody3D2" unique_id=609687611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5285406, 0, 0.16296387)
+shape = SubResource("BoxShape3D_ox5ug")
+
+[node name="PokerMinigame" parent="PokerInteractable2" unique_id=514339496 instance=ExtResource("7_ox5ug")]
+
+[node name="Table" parent="PokerInteractable2/PokerMinigame" index="0" unique_id=233495553]
+transform = Transform3D(3.3, 0, 0, 0, 0.51000005, 0, 0, 0, 1.728, 0, -0.011870623, 0)
+
+[node name="RouletteInteractable" type="Node3D" parent="." unique_id=977624411 node_paths=PackedStringArray("minigame_node", "interactable_camera")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1538792, 0.25500003, 5.495723)
+script = ExtResource("2_a5065")
+minigame_to_start = "roulette"
+minigame_node = NodePath("RouletteMinigame")
+interactable_camera = NodePath("RouletteMinigame/RouletteCamera")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="RouletteInteractable" unique_id=1147707804]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.3290424, 2.9664469, 8.554824)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RouletteInteractable/StaticBody3D" unique_id=552958728]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.11828613, 0.7564087)
+shape = SubResource("BoxShape3D_i15o6")
+
+[node name="RouletteMinigame" parent="RouletteInteractable" unique_id=1831801135 instance=ExtResource("9_nccby")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.3290424, 2.9664469, 8.554824)
 
 [editable path="PokerInteractable2/PokerMinigame"]

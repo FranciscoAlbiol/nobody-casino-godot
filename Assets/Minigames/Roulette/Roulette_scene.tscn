@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bmotcku77j7re"]
+
+[ext_resource type="Script" uid="uid://bujcci5ry738k" path="res://Assets/Minigames/Roulette/roulette_manager.gd" id="1_dqcyt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_filvk"]
+load_path = "res://.godot/imported/wheel.png-05bb41f013fd7c2f8c614587293376bb.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd25t"]
+atlas = SubResource("CompressedTexture2D_filvk")
+region = Rect2(1024, 488, 520, 512)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_alvcj"]
+load_path = "res://.godot/imported/wheel.png-05bb41f013fd7c2f8c614587293376bb.s3tc.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_swx0b"]
+atlas = SubResource("CompressedTexture2D_alvcj")
+region = Rect2(456, 488, 520, 512)
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_mb8hc"]
+viewport_path = NodePath("SubViewport")
+
+[node name="RouletteMinigame" type="Node3D" unique_id=1831801135]
+script = ExtResource("1_dqcyt")
+
+[node name="RouletteCamera" type="Camera3D" parent="." unique_id=1458763277]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.0052443)
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=970547370]
+transparent_bg = true
+size = Vector2i(520, 520)
+
+[node name="Control" type="Control" parent="SubViewport" unique_id=711987984]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureProgressPrice" type="TextureProgressBar" parent="SubViewport/Control" unique_id=1553104368]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -260.0
+offset_right = 260.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+value = 2.0
+fill_mode = 4
+texture_under = SubResource("AtlasTexture_rd25t")
+texture_progress = SubResource("AtlasTexture_swx0b")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1076667122]
+transform = Transform3D(1, -1.7484555e-07, 0, 1.7484555e-07, 1, 0, 0, 0, 1, 0, 0, 0)
+rotation_order = 0
+offset = Vector2(0, -3.8)
+texture = SubResource("ViewportTexture_mb8hc")
