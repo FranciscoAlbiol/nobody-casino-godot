@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QuatroCard" format=3 uid="uid://8b7mk7b0v3w4"]
+
+[ext_resource type="Script" uid="uid://dd7668s24b11c" path="res://Assets/Minigames/Quatro/QuatroCard.gd" id="1_5hnf1"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_clvgw"]
+load_path = "res://.godot/imported/quatro_cards_spritesheet.png-096cd41bd1be6ca219e3bc475bc39c0d.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_woby0"]
+atlas = SubResource("CompressedTexture2D_clvgw")
+region = Rect2(2376, 1192, 198, 298)
+
+[resource]
+script = ExtResource("1_5hnf1")
+number = 12
+suit = 2
+card_sprite = SubResource("AtlasTexture_woby0")
