@@ -1,0 +1,8 @@
+[gd_resource type="AtlasTexture" format=3 uid="uid://lrmnywc54mm4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_alvcj"]
+load_path = "res://.godot/imported/wheel.png-05bb41f013fd7c2f8c614587293376bb.s3tc.ctex"
+
+[resource]
+atlas = SubResource("CompressedTexture2D_alvcj")
+region = Rect2(450, 450, 1110, 600)
